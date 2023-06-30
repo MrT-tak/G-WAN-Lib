@@ -1,0 +1,44 @@
+/* Dynamic gradient by User Rebo, edited by isherwood 
+ */
+
+/* :root {
+    --dynamicGradient-overlay-color-1: #first color;
+    --dynamicGradient-overlay-color-2: #second color;
+    --dynamicGradient-anim-duration: 2s;
+} */
+
+#gradient {
+    opacity: 0.8;
+    background: none;
+}
+
+#gradient:after,
+#gradient:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#gradient:before {
+    background: linear-gradient(135deg, var(--overlay-color-2) 0%, var(--overlay-color-1) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out 0s infinite alternate;
+}
+
+#gradient:after {
+    background: linear-gradient(135deg, var(--overlay-color-1) 0%, var(--overlay-color-2) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out calc(-1 * var(--anim-duration)) infinite alternate;
+}
+
+@keyframes OpacityAnim {
+    0% {
+        opacity: 1.0
+    }
+
+    100% {
+        opacity: 0.0
+    }
+}
