@@ -1,0 +1,56 @@
+/* written by @MrT-tak, some copied from web[UNKNOWN sources] */
+
+/* variables:
+    thumb
+    --scrollbar-thumb : thumb[the part to hold to scroll] color
+    --scrollbar-width : width of the scrollbar in any measure
+    --scrollbar-thumb-background color any measure[recommended: alpha channel to be 0.74]{basically --scrollbar-thumb but with 0.74}
+    --scrollbar-thumb-boxShadow : bassically --scrollbar-thumb-background but darker so there is some box shadow
+    --scrollbar-thumb-borderRadius : border radius for the scrollbar thumb.
+    --scrollbar-thumb-padding : padding for the scrollbar thumb
+
+    --scrollbar-thumb-hoverColor : color of the thumb when hovering
+    --scrollbar-thumb-activeColor : color of the thumb when active
+
+    track
+    --scrollbar-trackBar : color of track of the slide bar
+    --scrollbar-trackBar-borderColor : border color of track 
+*/
+
+/*scroll bar code*/
+/*standard*/
+body, main, html {
+  /* <color> values */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-trackBar); /* Two valid colors.
+The first applies to the thumb of the scrollbar, the second to the track. */
+}
+/*webkit*/
+/* width */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-background);
+  box-shadow: inset 0 0 6px var(--scrollbar-thumb-boxShadow);
+  padding: var(--scrollbar-thumb-padding);
+  border-radius: var(--scrollbar-thumb-borderRadius);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hoverColor);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-thumb-activeColor);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-trackBar);
+  /*border-color: rgb(0, 77, 0);*/
+  border-color: var(--scrollbar-trackBar-borderColor);
+  border-spacing: 25px;
+}
